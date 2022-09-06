@@ -1,0 +1,24 @@
+# Compilados
+*.class
+target/
+
+# Logs
+*.log
+
+# Intellij IDEA
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Netbeans
+nbproject/*
+nb-configuration.xml
+
+.classpath
+.project
+.settings/
+
+# Temporales
+~*.*
+*.*~
