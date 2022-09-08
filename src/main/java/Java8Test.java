@@ -20,7 +20,7 @@ public class Java8Test {
         employees = Employee.sortEmployee(employees);
         employees.forEach(System.out::println);
 
-        Matematicas a = (x, y) -> x + y;
+        Maths a = (x, y) -> x + y;
         System.out.println(a.operacion(2, 3));
     }
 
@@ -78,6 +78,6 @@ interface Arithmetic {
     public double operacion(double x, double y);
 }
 
-interface Matematicas {
-    public double operacion(double x, double y)
+interface Maths {
+    public double operacion(double x, double y);
 }
