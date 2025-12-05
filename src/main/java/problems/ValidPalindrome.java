@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class ValidPalindrome {
-	
-	public static void main(String[] args) {
-		ValidPalindrome main = new ValidPalindrome();
+
+    public static void main(String[] args) {
+        ValidPalindrome main = new ValidPalindrome();
         List<String> arr = new ArrayList<>(Arrays.asList("oso", "Anilina", "reconocer"));
         long start = System.currentTimeMillis(); // Start time
         arr.forEach(s -> {
@@ -20,7 +20,7 @@ public class ValidPalindrome {
         System.out.println("Execution time: " + executionTime + " ms");
     }
 
-	public boolean isPalindrome(String str) {
+    public boolean isPalindrome(String str) {
         str = str.replaceAll("\\s", "").toLowerCase();
 
         int left = 0;
@@ -34,7 +34,7 @@ public class ValidPalindrome {
             right--;
         }
         return true;
-	}
+    }
 
     public boolean isPalindromeV2(String str) {
         str = str.replaceAll("\\s", "").toLowerCase();

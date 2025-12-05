@@ -8,6 +8,7 @@ public class CompileExceptionTest {
         c.print();
     }
 }
+
 class Parent1 {
     public void print() {
         System.out.println("This is Parent");

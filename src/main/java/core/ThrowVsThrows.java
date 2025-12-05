@@ -1,19 +1,19 @@
 package core;
 
 public class ThrowVsThrows {
-    public void checkAge(int age){
-        if(age<18)
+    public void checkAge(int age) {
+        if (age < 18) {
             throw new ArithmeticException("Not Eligible for voting");
-        else
+        } else {
             System.out.println("Eligible for voting");
+        }
     }
 
-    public int division(int a, int b) throws ArithmeticException{
-        int t = a/b;
-        return t;
+    public int division(int a, int b) throws ArithmeticException {
+        return a / b;
     }
-    
-    public static void main(String args[]){
+
+    public static void main(String args[]) {
         ThrowVsThrows obj = new ThrowVsThrows();
 
         // Throw
@@ -21,10 +21,9 @@ public class ThrowVsThrows {
         System.out.println("End Of Program");
 
         // Throws
-        try{
-            System.out.println(obj.division(15,0));
-        }
-        catch(ArithmeticException e){
+        try {
+            System.out.println(obj.division(15, 0));
+        } catch (ArithmeticException e) {
             System.out.println("You shouldn't divide number by zero");
         }
     }

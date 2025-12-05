@@ -22,12 +22,14 @@ public class ThreadVsRunnable {
         Thread.sleep(1000);
         // Waiting for 1 second before starting next thread
         ExtendsThread tc2 = new ExtendsThread();
-        tc2.start(); Thread.sleep(1000);
+        tc2.start();
+        Thread.sleep(1000);
         // Waiting for 1 second before starting next thread
         ExtendsThread tc3 = new ExtendsThread();
         tc3.start();
     }
 }
+
 // Extend Thread class...
 class ExtendsThread extends Thread {
     private int counter = 0;

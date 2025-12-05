@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Java8Test {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // reference to static method
         List<Employee> employees = Java8Test.getEmployees();
         employees.forEach(System.out::println);
@@ -25,7 +25,7 @@ public class Java8Test {
     }
 
 
-    public static List<Employee> getEmployees(){
+    public static List<Employee> getEmployees() {
         List<Employee> list = new ArrayList<>();
         //Stream.iterate(initial value, next value)
         Stream.iterate(0, n -> n + 1)// <-- Streams Object
@@ -33,7 +33,7 @@ public class Java8Test {
                 .forEach(
                         x -> {// <-- Lambda -
                             list.add(
-                                    new Employee(x.toString(), String.format("Employe%d",x), (x%2==0) ? "Developer" : "Tester")
+                                    new Employee(x.toString(), String.format("Employe%d", x), (x % 2 == 0) ? "Developer" : "Tester")
                             );
                         }
                 );
@@ -46,17 +46,17 @@ class Employee {
     String name;
     public String role;
 
-    Employee(String idEmployee, String name, String role){
+    Employee(String idEmployee, String name, String role) {
         this.idEmployee = idEmployee;
         this.name = name;
         this.role = role;
     }
 
-    public String toString(){
+    public String toString() {
         return String.format("%s - %s, %s", idEmployee, name, role);
     }
 
-    public static List<Employee> sortEmployee(List<Employee> list){
+    public static List<Employee> sortEmployee(List<Employee> list) {
         Collections.sort(list, new Comparator<Employee>() {
             public int compare(Employee e1, Employee e2) {
                 return e2.idEmployee.compareTo(e1.idEmployee);

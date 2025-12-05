@@ -54,6 +54,7 @@ class MacCheckbox implements Checkbox {
 // Abstract factory
 interface GUIFactory {
     Button createButton();
+
     Checkbox createCheckbox();
 }
 
@@ -62,6 +63,7 @@ class WindowsFactory implements GUIFactory {
     public Button createButton() {
         return new WindowsButton();
     }
+
     public Checkbox createCheckbox() {
         return new WindowsCheckbox();
     }
@@ -71,6 +73,7 @@ class MacFactory implements GUIFactory {
     public Button createButton() {
         return new MacButton();
     }
+
     public Checkbox createCheckbox() {
         return new MacCheckbox();
     }

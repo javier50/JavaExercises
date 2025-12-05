@@ -25,28 +25,28 @@ public class SpiralMatrix {
                     for (int i = startIndexX; i <= endIndexX; i++) {
                         spiral.add(matrix[startIndexY][i]);
                     }
-                    typeMove=1;
+                    typeMove = 1;
                     startIndexY++;
                     break;
                 case 1:
                     for (int i = startIndexY; i <= endIndexY; i++) {
                         spiral.add(matrix[i][endIndexX]);
                     }
-                    typeMove=2;
+                    typeMove = 2;
                     endIndexX--;
                     break;
                 case 2:
                     for (int i = endIndexX; i >= startIndexX; i--) {
                         spiral.add(matrix[endIndexY][i]);
                     }
-                    typeMove=3;
+                    typeMove = 3;
                     endIndexY--;
                     break;
                 case 3:
                     for (int i = endIndexY; i >= startIndexY; i--) {
                         spiral.add(matrix[i][startIndexX]);
                     }
-                    typeMove=0;
+                    typeMove = 0;
                     startIndexX++;
                     break;
             }

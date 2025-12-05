@@ -1,18 +1,18 @@
 package designpatterns.creational;
 
 /* Design pattern - FactoryMethod
-* Real-world usage:
-* - Payment gateways (PaymentFactory → MercadoPago, Stripe, PayPal).
-* - Database connectors (ConnectionFactory → MySQL, PostgreSQL).
-* - UI components (ButtonFactory → WindowsButton, MacButton).
-*
-* Key points:
-* - Product interface (Document) → defines the common behavior.
-* - Concrete products (WordDocument, PdfDocument) → actual implementations.
-* - Creator (DocumentFactory) → declares the factory method.
-* - Concrete factories (WordDocumentFactory, PdfDocumentFactory) → decide which product to create.
-* - Client → works with the factory, not with new directly.
-* */
+ * Real-world usage:
+ * - Payment gateways (PaymentFactory → MercadoPago, Stripe, PayPal).
+ * - Database connectors (ConnectionFactory → MySQL, PostgreSQL).
+ * - UI components (ButtonFactory → WindowsButton, MacButton).
+ *
+ * Key points:
+ * - Product interface (Document) → defines the common behavior.
+ * - Concrete products (WordDocument, PdfDocument) → actual implementations.
+ * - Creator (DocumentFactory) → declares the factory method.
+ * - Concrete factories (WordDocumentFactory, PdfDocumentFactory) → decide which product to create.
+ * - Client → works with the factory, not with new directly.
+ * */
 
 // Product interface
 interface Document {

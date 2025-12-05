@@ -1,7 +1,8 @@
 package core;
 
 class Parent {
-    protected String name= "<Name>";
+    protected String name = "<Name>";
+
     public void print() {
         System.out.println("This is core.Parent");
     }
@@ -9,6 +10,7 @@ class Parent {
 
 class Child extends Parent {
     private String lastName = "<lastName>";
+
     public void print() {
         System.out.println("This is core.Child");
     }
@@ -19,10 +21,10 @@ public class ExceptionsTest {
         try {
             String x = null;
             x.toString(); // <-- it will trow a NullPointerException and also it's redundant;
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Catch Exception");
             e.printStackTrace();
-        //} catch(NullPointerException e) { // <-- Unreachable exception,
+            //} catch(NullPointerException e) { // <-- Unreachable exception,
             // if you want add a general exception you need to put at the final
             // Because all exception extend from 'Exception' class
             e.printStackTrace();
@@ -37,7 +39,7 @@ public class ExceptionsTest {
 
             //System.out.println(c.lastName);// Cannot resolve symbol 'lastName'
             // c is 'core.Parent' Object and this doesn't have the lastName variable
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Catch Exception");
         }
 
@@ -46,7 +48,7 @@ public class ExceptionsTest {
             c.print(); // <-- this will print 'This is core.Child'
             //System.out.println(c.lastName);// Cannot resolve symbol 'lastName'
             // The lastName variable needs to be 'public' or 'protected'
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Catch Exception");
         }
     }

@@ -29,12 +29,12 @@ public class APIsTree {
         int countProject = 0, indexProject = 0;
         int countSubproject = 0, indexSubproject = 0;
         int countMethod = 0, indexMethod = 0;
-        for(int i = 0; i < api.size(); i++){
+        for (int i = 0; i < api.size(); i++) {
             String[] item = api.get(i).split("/");
 
-            if(!project.equals(item[1])){
-                if(countProject>0){
-                    apiTreeList.set(indexProject, apiTreeList.get(indexProject) + " (" + countProject +")");
+            if (!project.equals(item[1])) {
+                if (countProject > 0) {
+                    apiTreeList.set(indexProject, apiTreeList.get(indexProject) + " (" + countProject + ")");
                 }
                 countProject = 1;
                 indexProject = apiTreeList.size();
@@ -47,9 +47,9 @@ public class APIsTree {
                 countProject++;
             }
 
-            if(!subproject.equals(item[2]) || newProject){
-                if(countSubproject>0){
-                    apiTreeList.set(indexSubproject, apiTreeList.get(indexSubproject) + " (" + countSubproject +")");
+            if (!subproject.equals(item[2]) || newProject) {
+                if (countSubproject > 0) {
+                    apiTreeList.set(indexSubproject, apiTreeList.get(indexSubproject) + " (" + countSubproject + ")");
                 }
                 countSubproject = 1;
                 indexSubproject = apiTreeList.size();
@@ -62,9 +62,9 @@ public class APIsTree {
                 countSubproject++;
             }
 
-            if(!method.equals(item[3]) || newSubproject){
-                if(countMethod>0){
-                    apiTreeList.set(indexMethod, apiTreeList.get(indexMethod) + " (" + countMethod +")");
+            if (!method.equals(item[3]) || newSubproject) {
+                if (countMethod > 0) {
+                    apiTreeList.set(indexMethod, apiTreeList.get(indexMethod) + " (" + countMethod + ")");
                 }
                 countMethod = 1;
                 indexMethod = apiTreeList.size();
@@ -75,9 +75,9 @@ public class APIsTree {
                 countMethod++;
             }
         }
-        apiTreeList.set(indexProject, apiTreeList.get(indexProject) + " (" + countProject +")");
-        apiTreeList.set(indexSubproject, apiTreeList.get(indexSubproject) + " (" + countSubproject +")");
-        apiTreeList.set(indexMethod, apiTreeList.get(indexMethod) + " (" + countMethod +")");
+        apiTreeList.set(indexProject, apiTreeList.get(indexProject) + " (" + countProject + ")");
+        apiTreeList.set(indexSubproject, apiTreeList.get(indexSubproject) + " (" + countSubproject + ")");
+        apiTreeList.set(indexMethod, apiTreeList.get(indexMethod) + " (" + countMethod + ")");
 
         String[] apiTree = new String[apiTreeList.size()];
         apiTree = apiTreeList.toArray(apiTree);

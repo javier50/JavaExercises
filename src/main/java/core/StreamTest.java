@@ -11,13 +11,14 @@ class Employee {
     String lastName;
     String role;
 
-    public String toString(){
+    public String toString() {
         return String.format("%s %s(%s)", lastName, name, role);
     }
 }
+
 public class StreamTest {
     public static void main(String[] args) {
-        int[] array = {2,4,6,3,7,8};
+        int[] array = {2, 4, 6, 3, 7, 8};
         System.out.println(sumStream(array));
         System.out.println(avgStream(array));
         System.out.println("\n");
@@ -40,6 +41,7 @@ public class StreamTest {
                 .mapToInt(Integer::intValue)
                 .sum();
     }
+
     public static double avgStream(List<Integer> list) {
         return list.stream()
                 .mapToInt(Integer::intValue)
@@ -54,7 +56,7 @@ public class StreamTest {
         return Arrays.stream(array).average().getAsDouble();
     }
 
-    public static List<String> filterByWord(List<String> list, String word){
+    public static List<String> filterByWord(List<String> list, String word) {
         return list
                 .stream()
                 .filter(s -> s.startsWith(word))
@@ -63,38 +65,40 @@ public class StreamTest {
                 .collect(Collectors.toList());
     }
 
-    public static List<Employee> getEmployeeList(){
+    public static List<Employee> getEmployeeList() {
         List<Employee> employeeList = new ArrayList<>();
-        IntStream.range(0,3).forEach(i->{
+        IntStream.range(0, 3).forEach(i -> {
             Employee temp = new Employee();
-            temp.name = "Jonh" +  i;
+            temp.name = "Jonh" + i;
             temp.lastName = "Smith" + i;
             temp.role = "Developer";
             employeeList.add(temp);
         });
-        IntStream.range(0,3).forEach(i->{
+        IntStream.range(0, 3).forEach(i -> {
             Employee temp = new Employee();
-            temp.name = "Diya" +  i;
+            temp.name = "Diya" + i;
             temp.lastName = "Das" + i;
             temp.role = "Devops";
             employeeList.add(temp);
         });
-        IntStream.range(0,3).forEach(i->{
+        IntStream.range(0, 3).forEach(i -> {
             Employee temp = new Employee();
-            temp.name = "Sri" +  i;
+            temp.name = "Sri" + i;
             temp.lastName = "Devi" + i;
             temp.role = "Scrum Master";
             employeeList.add(temp);
         });
         return employeeList;
     }
-    public static List<Employee> filterByRole(List<Employee> list, String role){
+
+    public static List<Employee> filterByRole(List<Employee> list, String role) {
         return list
                 .stream()
                 .filter(s -> s.role.equals(role))
                 .collect(Collectors.toList());
     }
-    public static List<Employee> filterByName(List<Employee> list, String str){
+
+    public static List<Employee> filterByName(List<Employee> list, String str) {
         return list
                 .stream()
                 .filter(s -> s.name.contains(str))
